@@ -1,5 +1,5 @@
 # Plot a summary figure with performance across all experiments.
-setwd("C:/Users/teo/Documents/EPFL/projects/DA-analysis/")
+setwd("git/DA-analysis")
 options(stringsAsFactors = FALSE)
 library(tidyverse)
 library(magrittr)

@@ -1,12 +1,12 @@
 # Plot a summary figure with performance across all experiments.
-setwd("C:/Users/teo/Documents/EPFL/projects/DA-analysis/")
+setwd("git/DA-analysis")
 options(stringsAsFactors = FALSE)
 library(tidyverse)
 library(magrittr)
 library(ggsignif)
 source("R/theme.R")
 
-cell_count_df = readRDS('data/summaries/misc/comparisons.rds') %>%
+cell_count_df = readRDS('data/metadata/comparisons.rds') %>%
     mutate(
         cell_type = paste0(compar1, '_vs_', compar2),
         cell_type = ifelse(paper == 'GonzalesBlas_2018', paste0('Melanoma cell line-', cell_type), cell_type),

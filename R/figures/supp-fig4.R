@@ -1,5 +1,5 @@
 # Plot a summary figure with performance across all experiments.
-setwd("C:/Users/teo/Documents/EPFL/projects/DA-analysis/")
+setwd("git/DA-analysis")
 options(stringsAsFactors = FALSE)
 library(tidyverse)
 library(magrittr)
@@ -199,7 +199,7 @@ p3
 ggsave("fig/Supp_Fig4/false-discoveries-de_loc.pdf", p3,
        width = 12, height = 6.5, units = "cm", useDingbats = FALSE)
 
-data_file = 'data/seurat/simulations_with_depth/n_cells=1000-n_reps=6-de_loc=1-de_prob=0.5-simulation_iter=1.rds'
+data_file = 'data/final_datasets/simulated/peaks_with_sequencing_depth/n_cells=1000-n_reps=6-de_loc=1-de_prob=0.5-simulation_iter=1.rds'
 sc = readRDS(data_file)
 
 expr_df = data.frame(
