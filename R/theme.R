@@ -254,20 +254,21 @@ nr_tree_red = colorRampPalette(c("#757679", "#DBDBDD", "#FFFFFF", "#FA525B", "#A
 
 x100 = function(x) x * 100
 
-# singlecell_colors = colorRampPalette(c(pals::stepped3()[1], pals::stepped3()[4], pals::stepped3()[13]))(8) %>% setNames(c("Binomial", "Fisher~exact~test", "LR[peaks]", "Permutation~test", "LR[clusters]", "Negative~binomial", "t~test", "Wilcoxon~rank-sum~test"))
-# pseudobulk_colors = colorRampPalette(pals::stepped3()[5:7])(4) %>% setNames(c("DESeq2-LRT", "DESeq2-Wald", "edgeR-LRT", "edgeR-QLF"))
-# other_colors = pals::stepped3()[11] %>% setNames("'SnapATAC::findDAR'")
+# da_analysis_colors = c(
+#     # singlecell colors 
+#     colorRampPalette(c(pals::stepped3()[1], pals::stepped3()[4], pals::stepped3()[13]))(8) %>% setNames(c("t~test", "Binomial", "Fisher~exact~test", "LR[peaks]", "LR[clusters]", "Permutation~test", "Negative~binomial", "Wilcoxon~rank-sum~test")),
+#     # pseudobulk colors
+#     colorRampPalette(pals::stepped3()[5:7])(4) %>% setNames(c("DESeq2-LRT", "DESeq2-Wald", "edgeR-LRT", "edgeR-QLF")),
+#     # other colors
+#     pals::stepped3()[11] %>% setNames("'SnapATAC::findDAR'")
+#     )
+
 da_analysis_colors = c(
     # singlecell colors 
-    colorRampPalette(c(pals::stepped3()[1], pals::stepped3()[4], pals::stepped3()[13]))(8) %>% setNames(c("t~test", "Binomial", "Fisher~exact~test", "LR[peaks]", "LR[clusters]", "Permutation~test", "Negative~binomial", "Wilcoxon~rank-sum~test")),
+    # colorRampPalette(c('#AAF2EC', '#02CBBC', '#088980', pals::stepped3()[1]))(8) %>% setNames(c("t~test", "Binomial", "Fisher~exact~test", "LR[peaks]", "LR[clusters]", "Permutation~test", "Negative~binomial", "Wilcoxon~rank-sum~test")),
+    colorRampPalette(c(pals::stepped3()[1], pals::stepped3()[4], '#00BFAF'))(8) %>% setNames(c("t~test", "Binomial", "Fisher~exact~test", "LR[peaks]", "LR[clusters]", "Permutation~test", "Negative~binomial", "Wilcoxon~rank-sum~test")),
     # pseudobulk colors
-    colorRampPalette(pals::stepped3()[5:7])(4) %>% setNames(c("DESeq2-LRT", "DESeq2-Wald", "edgeR-LRT", "edgeR-QLF")),
+    colorRampPalette(c('#FC999E', '#F04B54', '#A31B21'))(4) %>% setNames(c("DESeq2-LRT", "DESeq2-Wald", "edgeR-LRT", "edgeR-QLF")),
     # other colors
-    pals::stepped3()[11] %>% setNames("'SnapATAC::findDAR'")
-    )
-
-
-# singlecell_colors = c(pals::stepped2()[1:4], pals::stepped2()[17:20]) %>% setNames(c("Binomial", "Fisher~exact~test", "LR[peaks]", "Permutation~test", "LR[clusters]", "Negative~binomial", "t~test", "Wilcoxon~rank-sum~test"))
-# pseudobulk_colors = pals::stepped2()[9:12] %>% setNames(c("DESeq2-LRT", "DESeq2-Wald", "edgeR-LRT", "edgeR-QLF"))
-# other_colors = pals::stepped2()[5] %>% setNames("'SnapATAC::findDAR'")
-# da_analysis_colors = c(singlecell_colors, pseudobulk_colors, other_colors)
+    '#218716' %>% setNames("'SnapATAC::findDAR'")
+)

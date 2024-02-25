@@ -1,5 +1,5 @@
 # Plot a summary figure with performance across all experiments.
-setwd("git/DA-analysis")
+setwd("C:/Users/teo/Documents/EPFL/projects/DA-analysis/")
 options(stringsAsFactors = FALSE)
 library(tidyverse)
 library(magrittr)
@@ -93,7 +93,7 @@ labs = avg1 %>%
     mutate(label = formatC(median, format = 'f', digits = 2))
 saveRDS(labs, 'data/summaries/meta_summaries/bulk_aucc_mean_expr_bias_summary.rds')
 
-pal = da_analysis_colors
+pal = pseudobulk_atac_colors
 p1 = avg1 %>%
     ggplot(aes(x = reorder(method, mean_expr, stats::median), 
                color = method, fill = method)) +

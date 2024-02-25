@@ -78,13 +78,7 @@ labs = avg %>%
     mutate(label = formatC(median, format = 'f', digits = 2))
 saveRDS(labs, 'data/summaries/meta_summaries/bulk_aucc_summary.rds')
 
-pal = c('mixed model' = 'grey80',
-        'single-cell' = colours.cafe322[1],
-        'pseudobulk' = colours.cafe322[2],
-        'pseudo-replicates' = "#6E645F",
-        'other' = colours.cafe322[3])
 pal = da_analysis_colors
-
 p1 = avg %>%
     ggplot(aes(x = reorder(method, aucc, stats::median), 
                color = method, fill = method)) +

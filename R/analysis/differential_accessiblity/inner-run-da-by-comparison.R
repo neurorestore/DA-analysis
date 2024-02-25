@@ -35,7 +35,9 @@ rm(temp)
 metadata = preprocess_meta(metadata, args$input_filename)
 
 paper_da_type = args$paper_da_type
-da_types = da_family_args[[args$da_family]][[args$da_method]]
+if (!args$alternative_implementations) {
+	da_types = da_family_args[[args$da_family]][[args$da_method]]
+} 
 
 output_df = data.frame()
 compar1 = args$compar1
@@ -116,7 +118,11 @@ for (curr_cell_type in cell_types) {
 		filter(cell_type == curr_cell_type)
 	temp_mat_2 = temp_mat[,temp_meta_2$barcode]
 	temp_mat_2 = temp_mat_2[rowSums(temp_mat_2) > 0,]
-	output_df = run_da_wrapper(output_df, temp_mat_2, temp_meta_2, args, gc_content_df = gc_content_df, da_types = da_types)
+	if (!args$alternative_implementations) {
+		output_df = run_da_wrapper(output_df, temp_mat_2, temp_meta_2, args, gc_content_df = gc_content_df, da_types = da_types)	
+	} else {
+		output_df = run_alt_DA(mat1, mat2, meta1, meta2, test = args$da_method)
+	}
 }
 	
 if (nrow(output_df) > 0){

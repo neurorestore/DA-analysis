@@ -188,7 +188,8 @@ p4
 p5 = p1 | p2 | p3 | p4
 ggsave("fig/Fig8/row-1.pdf", p5, width = 18, height = 9, units = "cm", useDingbats = FALSE)
  
-alt_colors = colorRampPalette(c("#B8E600", "#218716"))(3) %>% setNames(c("t~test", "Wilcoxon~rank-sum~test", "Negative~binomial"))
+# alt_colors = colorRampPalette(c("#B8E600", "#218716"))(3) %>% setNames(c("t~test", "Wilcoxon~rank-sum~test", "Negative~binomial"))
+alt_colors = pals::stepped3()[5:7] %>% setNames(c("t~test", "Wilcoxon~rank-sum~test", "Negative~binomial"))
 
 # alternative implementations
 dat3 = dat0 %>%
@@ -337,7 +338,7 @@ labs = dat4 %>%
 pal2 = c('Signac' = unname(da_analysis_colors['Wilcoxon~rank-sum~test']),
          'ArchR' = unname(alt_colors['Wilcoxon~rank-sum~test']))
 
-p14 = dat4 %>%
+p8 = dat4 %>%
     mutate(
         method = factor(method, levels=c("Signac", "ArchR"))
     ) %>%
@@ -373,8 +374,8 @@ p14 = dat4 %>%
         axis.text.x = element_text(angle=45, hjust=1),
         plot.title = element_text(size=5)
     )
-p14
-ggsave('fig/Fig8/alt-wilcoxon-test-time.pdf', p14, width=3, height=8, units='cm')
+p8
+ggsave('fig/Fig8/alt-wilcoxon-test-time.pdf', p8, width=3, height=8, units='cm')
 
 labs = dat4 %>% 
     group_by(method) %>% 
@@ -382,7 +383,7 @@ labs = dat4 %>%
         text_val = round(mean(mem),3), mem = -2) %>%
     ungroup()
 
-p15 = dat4 %>%
+p9 = dat4 %>%
     mutate(
         method = factor(method, levels=c("Signac", "ArchR"))
     ) %>%
@@ -417,8 +418,8 @@ p15 = dat4 %>%
         axis.text.x = element_text(angle=45, hjust=1),
         plot.title = element_text(size=5)
     )
-p15
-ggsave('fig/Fig8/alt-wilcoxon-test-mem.pdf', p15, width=3, height=8, units='cm')
+p9
+ggsave('fig/Fig8/alt-wilcoxon-test-mem.pdf', p9, width=3, height=8, units='cm')
 
 dat5 = dat0 %>%
     filter(
@@ -455,7 +456,7 @@ labs = dat5 %>%
 pal2 = c('Signac' = unname(da_analysis_colors['Negative~binomial']),
          'glmGamPoi' = unname(alt_colors['Negative~binomial']))
 
-p16 = dat5 %>%
+p10 = dat5 %>%
     mutate(
         method = factor(method, levels=c("Signac", "glmGamPoi"))
     ) %>%
@@ -491,8 +492,8 @@ p16 = dat5 %>%
         axis.text.x = element_text(angle=45, hjust=1),
         plot.title = element_text(size=5)
     )
-p16
-ggsave('fig/Fig8/alt-nb-test-time.pdf', p16, width=3, height=8, units='cm')
+p10
+ggsave('fig/Fig8/alt-nb-test-time.pdf', p10, width=3, height=8, units='cm')
 
 labs = dat5 %>% 
     group_by(method) %>% 
@@ -500,7 +501,7 @@ labs = dat5 %>%
         text_val = round(mean(mem),3), mem = -5) %>%
     ungroup()
 
-p17 = dat5 %>%
+p11 = dat5 %>%
     mutate(
         method = factor(method, levels=c("Signac", "glmGamPoi"))
     ) %>%
@@ -536,9 +537,9 @@ p17 = dat5 %>%
         axis.text.x = element_text(angle=45, hjust=1),
         plot.title = element_text(size=5)
     )
-p17
-ggsave('fig/Fig8/alt-nb-test-mem.pdf', p17, width=3, height=8, units='cm')
+p11
+ggsave('fig/Fig8/alt-nb-test-mem.pdf', p11, width=3, height=8, units='cm')
 
-bottom_row = p12 | p14 + theme(axis.title.y = element_blank()) | p16 + theme(axis.title.y = element_blank()) | p13 | p15 + theme(axis.title.y = element_blank()) | p17 + theme(axis.title.y = element_blank())
+bottom_row = p6 | p8 + theme(axis.title.y = element_blank()) | p10 + theme(axis.title.y = element_blank()) | p7 | p9 + theme(axis.title.y = element_blank()) | p11 + theme(axis.title.y = element_blank())
 ggsave('fig/Fig8/bottom-row.pdf', bottom_row, width=15, height=9, units='cm')
 

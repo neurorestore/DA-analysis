@@ -398,25 +398,18 @@ dat$experiment = factor(dat$experiment, levels = c(
     'Experiment 8: Scalability',
     'Summary'))
 
-blues = brewer.pal(3, 'Blues')
-# p1 = dat %>% 
-#     ggplot(aes(x = method, y = type, fill=tercile)) +
-#     facet_grid(experiment ~ ., scales = 'free', space = 'free') +
-#     geom_tile(color = 'white') +
-#     scale_x_discrete(expand = c(0, 0), labels = scales::parse_format()) +
-#     scale_y_discrete(expand = c(0, 0)) +
-#     scale_fill_manual('Tercile', values = blues, 
-#                       labels = c('1' = 'Bottom', '2' = 'Middle', '3' = 'Top')) +
-#     # coord_fixed() + 
-#     boxed_theme() +
-#     theme(axis.text.x = element_text(angle = 45, hjust = 1),
-#           axis.title.x = element_blank(),
-#           axis.title.y = element_blank(),
-#           axis.ticks.y = element_blank(),
-#           strip.text = element_text(face='bold'),
-#           legend.position = 'top',
-#           legend.key.size = unit(0.35, 'lines'))
-# p1
+
+[1] "#000000" "#0E0B0C" "#1C1717" "#292223" "#362D2E" "#423839" "#4E4244" "#594D4F" "#645759" "#6E6063" "#786A6C" "#827376" "#8B7C7F" "#938588"
+[15] "#9B8E91" "#A39699" "#AA9EA1" "#B1A6A9" "#B8AEB1" "#BEB5B8" "#C4BCBF" "#C9C3C6" "#CECACC" "#D3D0D2" "#D7D6D8" "#DBDCDE" "#DFE1E3" "#E3E7E8"
+[29] "#E6ECED" "#E9F0F2" "#EBF5F6" "#EEF9FA" "#F0FCFD" "#F2FFFF" "#F4FFFF" "#F5FFFF" "#F7FFFF" "#F8FFFF" "#F9FFFF" "#FAFFFF" "#FBFFFF" "#FBFFFF"
+[43] "#FCFFFF" "#FCFFFF" "#FDFFFF" "#FDFFFF" "#FEFFFF" "#FEFFFF" "#FEFFFF" "#FEFFFF" "#FFFDFD" "#FFF8F9" "#FFF4F4" "#FFEEEF" "#FFE9EA" "#FFE3E4"
+[57] "#FFDDDE" "#FFD6D8" "#FFCFD2" "#FFC8CB" "#FFC1C4" "#FFB9BD" "#FFB2B6" "#FFAAAE" "#FFA2A7" "#FF9A9F" "#FF9298" "#FF8A90" "#FF8288" "#FF7A81"
+[71] "#FE7279" "#FD6A72" "#FC626A" "#FB5B63" "#FA535C" "#F84C55" "#F7454F" "#F53F48" "#F33842" "#F1323C" "#EF2C37" "#ED2732" "#EA222D" "#E71D28"
+[85] "#E51924" "#E11620" "#DE121D" "#DB0F1A" "#D70D18" "#D30B16" "#CF0A14" "#CB0913" "#C70913" "#C20A13" "#BD0B14" "#B90C15" "#B30F17" "#AE1219"
+[99] "#A8161D" "#A31B21"
+# pal = brewer.pal(3, 'Blues')
+pal = colorRampPalette(c(brewer.pal(3, 'Reds')[1], "#B30F17"))(3)
+pal = colorRampPalette(c("#FF9298", "#DB0F1A"))(3)
 
 experiments = levels(dat$experiment)
 for (experiment in experiments) {
@@ -429,7 +422,7 @@ for (experiment in experiments) {
         geom_tile(color = 'white') +
         scale_x_discrete(expand = c(0, 0), labels = scales::parse_format()) +
         scale_y_discrete(expand = c(0, 0)) +
-        scale_fill_manual('Tercile', values = blues,
+        scale_fill_manual('Tercile', values = pal,
                           labels = c('1' = 'Bottom', '2' = 'Middle', '3' = 'Top')) +
         # coord_fixed() +
         ggtitle(experiment) +

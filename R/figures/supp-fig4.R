@@ -199,7 +199,7 @@ p3
 ggsave("fig/Supp_Fig4/false-discoveries-de_loc.pdf", p3,
        width = 12, height = 6.5, units = "cm", useDingbats = FALSE)
 
-data_file = 'data/final_datasets/simulated/peaks_with_sequencing_depth/n_cells=1000-n_reps=6-de_loc=1-de_prob=0.5-simulation_iter=1.rds'
+data_file = 'data/final_datasets/simulated/peaks_with_sequencing_depth/n_cells=1000-n_reps=6-de_loc=0.5-de_prob=0.5-simulation_iter=1.rds'
 sc = readRDS(data_file)
 
 expr_df = data.frame(
@@ -359,3 +359,4 @@ ggsave("fig/Supp_Fig4/false-discoveries-Luecken-peaks-latent.vars.pdf", p5,
 
 top_row = plot_grid(p1, p2, nrow=2)
 ggsave('fig/Supp_Fig4/top_row.pdf', top_row, width = 18, height = 9.5, units = 'cm')
+

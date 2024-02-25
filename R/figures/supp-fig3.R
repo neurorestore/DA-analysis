@@ -84,7 +84,7 @@ labs = avg0 %>%
     mutate(label = formatC(median, format = 'f', digits = 2))
 pal = da_analysis_colors
 p1 = avg0 %>%
-    mutate(title = 'Removal of overlapping\npromoters regions') %>%
+    mutate(title = 'Removal of overlapping\npromoter regions') %>%
     ggplot(aes(x = reorder(method, aucc, stats::median), 
                color = method, fill = method)) +
     geom_boxplot(aes(y = aucc), outlier.shape = NA, alpha = 0.4, width = 0.6,
@@ -588,3 +588,4 @@ bottom_row = p4 | p5 | p6 | p7
 bottom_row
 ggsave("fig/Supp_Fig3/bottom-row.pdf", bottom_row,
        width = 18.35, height = 6.5, units = "cm", useDingbats = FALSE)
+

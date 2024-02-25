@@ -8,7 +8,6 @@ library(upstartr)
 library(effsize)
 source('R/theme.R')
 
-
 # load data
 dat = readRDS("data/summaries/false_discoveries/false_discoveries_simulated.rds") %>% 
     type_convert() %>% 
@@ -128,3 +127,4 @@ for (percentile_type in levels(dat$percentile_type)) {
 full = wrap_plots(out_plots, ncol=2)
 ggsave(paste0("fig/Supp_Fig16/full.pdf"), full,
        width = 19, height = 10, units = "cm", useDingbats = FALSE)
+

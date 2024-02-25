@@ -148,14 +148,119 @@ run_da_wrapper = function(output_df, temp_mat_2, temp_meta_2, args, gc_content_d
 				temp_res %<>% mutate(cell_type=paste0(cell_type, '-', compar1, '_vs_', compar2))
 			}
 			output_df = rbind(output_df, temp_res)
-		},
-		error = function(e){
-			print(e)
-			print(paste0('Skipping ', curr_cell_type))
-		},
-		finally = {
-			message(paste0(curr_cell_type, ' done.'))
-		})
-	}
+		}
+	},
+	error = function(e){
+		print(e)
+		print(paste0('Skipping ', curr_cell_type))
+	},
+	finally = {
+		message(paste0(curr_cell_type, ' done.'))
+	})
 	return (output_df)
+}
+
+## alternative implementations from ArchR and glmGamPoi
+sparseMatWilcoxon = function(mat1, mat2, meta1 = NULL, meta2 = NULL){
+	n1 = ncol(mat1)
+    n2 = ncol(mat2)
+    ## no background matching ##
+    # stopifnot(n1==n2)
+
+	df = wilcoxauc(cbind(mat1,mat2), c(rep("Top", ncol(mat1)),rep("Bot", ncol(mat2))))
+	df = df[which(df$group=="Top"),]
+
+	#Sparse Row Sums
+	m1 = Matrix::rowSums(mat1, na.rm=TRUE)
+	m2 = Matrix::rowSums(mat2, na.rm=TRUE)
+	offset = 1 #quantile(c(mat1@x,mat2@x), 0.99) * 10^-4
+	log2FC = log2((m1 + offset) / (m2 + offset))
+	log2Mean = log2(((m1 + offset) + (m2 + offset)) / 2)
+
+	out = data.frame(
+		log2Mean = log2Mean,
+		log2FC = log2FC,
+		fdr = df$padj, 
+		pval = df$pval, 
+		mean1 = Matrix::rowMeans(mat1, na.rm=TRUE), 
+		mean2 = Matrix::rowMeans(mat2, na.rm=TRUE), 
+		n = ncol(mat1),
+		auc = df$auc
+	)
+
+	return(out)
+
+}
+
+sparseMatTTest = function(mat1, mat2, meta1 = NULL, meta2 = NULL, m0 = 0){
+    
+    n1 = ncol(mat1)
+    n2 = ncol(mat2)
+    ## no background matching ##
+    # stopifnot(n1==n2)
+    n = n1 + n2
+    
+    #Sparse Row Means
+    m1 = Matrix::rowMeans(mat1, na.rm=TRUE)
+    m2 = Matrix::rowMeans(mat2, na.rm=TRUE)
+    
+    #Sparse Row Variances
+    v1 = computeSparseRowVariances(mat1@i + 1, mat1@x, m1, n1)
+    v2 = computeSparseRowVariances(mat2@i + 1, mat2@x, m2, n2)
+    
+    #Calculate T Statistic
+    se = sqrt( (1/n1 + 1/n2) * ((n1-1)*v1 + (n2-1)*v2)/(n1+n2-2) )
+    tstat = (m1-m2-m0)/se
+    pvalue = 2*pt(-abs(tstat), n - 2)
+    fdr = p.adjust(pvalue, method = "fdr")
+    
+    #Sparse Row Sums
+    m1 = Matrix::rowSums(mat1, na.rm=TRUE)
+    m2 = Matrix::rowSums(mat2, na.rm=TRUE)
+    offset = 1 #quantile(c(mat1@x,mat2@x), 0.99) * 10^-4
+    log2FC = log2((m1 + offset)/(m2 + offset))
+    log2Mean = log2(((m1+offset) + (m2+offset)) / 2)
+
+    out = data.frame(
+      log2Mean = log2Mean,
+      log2FC = log2FC,
+      fdr = fdr, 
+      pval = pvalue, 
+      mean1 = m1 / n1, 
+      mean2 = m2 / n2, 
+      var1 = v2,
+      var2 = v2,
+      n = n1
+    )
+    return(out)
+}
+
+glmGamPoi_de = function(mat1, mat2, meta1 = NULL, meta2 = NULL) {
+	full_mat = as.matrix(cbind(mat1, mat2))
+	full_meta = rbind(meta1, meta2)
+	full_meta %<>% 
+		mutate(
+			label = gsub(' ', '_', label),
+			label = gsub('-', '_', label),
+			label = gsub('\\+', '_', label)
+		)
+
+	fit = glm_gp(full_mat, col_data = full_meta, design = ~ label, on_disk = FALSE)
+	de_res = test_de(fit, contrast = colnames(fit$Beta)[2]) 
+	return(de_res)
+}
+
+run_alt_DA = function(mat1, mat2, meta1=NULL, meta2=NULL, test) {
+	if (test == 'ArchR_wilcoxon') {
+		out = sparseMatWilcoxon(mat1=mat1, mat2=mat2, meta1=meta1, meta2=meta2)
+	} else if (test == 'ArchR_t') {
+		out = sparseMatTTest(mat1=mat1, mat2=mat2, meta1=meta1, meta2=meta2))
+	} else if (test == 'glmGamPoi') {
+		out = glmGamPoi_de(mat1=mat1, mat2=mat2, meta1=meta1, meta2=meta2)
+	}
+	out %<>% mutate(
+		da_family = 'singlecell',
+		da_method = test,
+		da_type = test
+	)
 }

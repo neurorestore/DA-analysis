@@ -244,3 +244,4 @@ for (percentile_type in percentile_types) {
     p2
     ggsave(paste0("fig/Supp_Fig25-26/splatter-normalization-boxplot-number-", percentile_type, "-d.pdf"), p2, width = 9, height = 11, units = "cm", useDingbats = FALSE)
 }
+

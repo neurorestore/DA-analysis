@@ -135,7 +135,7 @@ p1 = eff %>%
           axis.text.x = element_text(angle = 45, hjust = 1),
           legend.position = 'none')
 p1
-ggsave("fig/Supp_Fig13/bulk-mean-expr-binarization-d.pdf", p3,
+ggsave("fig/Supp_Fig13/bulk-mean-expr-binarization-d.pdf", p1,
        width = 5.5, height = 5.5, units = "cm", useDingbats = FALSE)
 
 # average over bulk methods
@@ -241,3 +241,4 @@ ggsave("fig/Supp_Fig13/bulk-peak-size-binarization-d.pdf", p3,
 
 full = wrap_plots(p1,p2,p3, nrow=1)
 ggsave('fig/Supp_Fig13/full.pdf', full, width = 10, height = 12, units='cm')
+

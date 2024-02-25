@@ -7,7 +7,6 @@ library(pals)
 library(upstartr)
 source('R/theme.R')
 
-
 # load data
 dat = readRDS("data/summaries/concordance_res/multiome/all_aucc_logFC_filter.rds") %>% 
     type_convert() 
@@ -190,3 +189,4 @@ p2 = enr %>%
 p2
 ggsave("fig/Supp_Fig10/multiome-logFC-filter-enrichment.pdf", p2,
        width = 18, height = 15, units = "cm", useDingbats = FALSE)
+
