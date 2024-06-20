@@ -84,6 +84,8 @@ labs = avg3 %>%
     summarise(mean = mean(aucc), n = n(), median = median(aucc), aucc = median) %>%
     ungroup() %>%
     mutate(label = formatC(median, format = 'f', digits = 2))
+saveRDS(labs, 'data/summaries/meta_summaries/bulk_aucc-k=1000-summary.rds')
+
 pal = da_analysis_colors
 p1 = avg3 %>%
     ggplot(aes(x = reorder(method, aucc, stats::median), 
@@ -123,6 +125,8 @@ labs = avg4 %>%
     summarise(mean = mean(aucc), n = n(), median = median(aucc), aucc = median) %>%
     ungroup() %>%
     mutate(label = formatC(median, format = 'f', digits = 2))
+saveRDS(labs, 'data/summaries/meta_summaries/bulk_aucc-filter=5-summary.rds')
+
 p2 = avg4 %>%
     ggplot(aes(x = reorder(method, aucc, stats::median), 
                color = method, fill = method)) +
@@ -153,9 +157,10 @@ ggsave("fig/Supp_Fig1/bulk-aucc-filter=5pct.pdf", p2,
 ## AUCC: leave-bulk-out ####
 ###############################################################################-
 
+full_labs = data.frame()
 bulk_grid = distinct(dat, bulk_da_method, bulk_da_type)
-plots = map(seq_len(nrow(bulk_grid)), ~ {
-    bulk_idx = .x
+plots = list()
+for (bulk_idx in 1:nrow(bulk_grid)) {
     bulk_row = bulk_grid[bulk_idx, ]
     print(bulk_row)
     avg0 = dat %>% 
@@ -216,6 +221,10 @@ plots = map(seq_len(nrow(bulk_grid)), ~ {
         summarise(mean = mean(aucc), n = n(), median = median(aucc), aucc = median) %>%
         ungroup() %>%
         mutate(label = formatC(median, format = 'f', digits = 2))
+    full_labs %<>% rbind(
+        labs %>% tidyr::crossing(bulk_row)
+    )
+    
     pal = da_analysis_colors
     
     # plot
@@ -241,8 +250,11 @@ plots = map(seq_len(nrow(bulk_grid)), ~ {
               legend.position = 'none',
               aspect.ratio = 1.4,
               plot.title = element_text(size = 5, hjust = 0.5))
-    p
-})
+    plots[[length(plots)+1]] = p
+}
+
+saveRDS(full_labs, 'data/summaries/meta_summaries/bulk_aucc-leave_out_bulk-summary.rds')
+
 p3 = wrap_plots(plots, nrow = 2, ncol=3)
 p3
 # ggsave("fig/Supp_Fig1/bulk-aucc-leave-bulk-out.pdf", p3,
@@ -423,6 +435,8 @@ labs = avg2 %>%
     summarise(mean = mean(aucc), n = n(), median = median(aucc), aucc = median) %>%
     ungroup() %>%
     mutate(label = formatC(median, format = 'f', digits = 2))
+saveRDS(labs, 'data/summaries/meta_summaries/bulk_aucc-pseudobulk_peaks-summary.rds')
+
 pal = da_analysis_colors
 
 p5 = avg2 %>%
@@ -600,6 +614,8 @@ labs = avg2 %>%
     summarise(mean = mean(aucc), n = n(), median = median(aucc), aucc = median) %>%
     ungroup() %>%
     mutate(label = formatC(median, format = 'f', digits = 2))
+saveRDS(labs, 'data/summaries/meta_summaries/bulk_aucc-noisy_peaks-summary.rds')
+
 pal = da_analysis_colors
 p6 = avg2 %>%
     ggplot(aes(x = reorder(method, aucc, stats::median), 
@@ -689,6 +705,7 @@ coefs = coef(summary(fit)) %>%
     mutate(padj = p.adjust(pval, 'BH'))
 filter(coefs, padj < 0.05)
 filter(coefs, pval < 0.05)
+
 # load data
 dat = readRDS("data/summaries/concordance_res/matched_bulk/all_aucc_enhancer_promoter.rds") %>% 
     type_convert() %>% 
@@ -758,6 +775,8 @@ labs = avg2 %>%
     summarise(mean = mean(aucc), n = n(), median = median(aucc), aucc = median) %>%
     ungroup() %>%
     mutate(label = formatC(median, format = 'f', digits = 2))
+saveRDS(labs, 'data/summaries/meta_summaries/bulk_aucc-enhancer_promoter-summary.rds')
+
 pal = da_analysis_colors
 p7_1 = avg2 %>%
     filter(ann == 'enhancer') %>%

@@ -1,0 +1,344 @@
+Experiment,Dataset,Comparison,compar1_nreps,compar2_nreps
+Experiment 1,Buenrostro_2018,CMP_vs_GMP,4,3
+Experiment 1,Buenrostro_2018,CMP_vs_HSC,4,3
+Experiment 1,Buenrostro_2018,CMP_vs_MEP,4,2
+Experiment 1,Buenrostro_2018,CMP_vs_MPP,4,2
+Experiment 1,Buenrostro_2018,GMP_vs_HSC,3,3
+Experiment 1,Buenrostro_2018,GMP_vs_MEP,3,2
+Experiment 1,Buenrostro_2018,GMP_vs_MPP,3,2
+Experiment 1,Buenrostro_2018,HSC_vs_MEP,3,2
+Experiment 1,Buenrostro_2018,HSC_vs_MPP,3,2
+Experiment 1,Buenrostro_2018,MEP_vs_MPP,2,2
+Experiment 1,Corces_2016,Blast_vs_LSC,2,2
+Experiment 1,GonzalesBlas_2018,0 hours_vs_24 hours,2,2
+Experiment 1,GonzalesBlas_2018,0 hours_vs_48 hours,2,2
+Experiment 1,GonzalesBlas_2018,0 hours_vs_72 hours,2,2
+Experiment 1,Satpathy_2018,Naive T cell_vs_Th17 T cell,3,2
+Experiment 1,Pliner_2018,0_hours_vs_72_hours,2,2
+Experiment 2,Argelaguet_2022,NMP_vs_Notochord,6,7
+Experiment 2,Argelaguet_2022,Blood_progenitors_2_vs_Surface_ectoderm,8,8
+Experiment 2,Argelaguet_2022,Erythroid3_vs_Surface_ectoderm,4,8
+Experiment 2,Argelaguet_2022,Erythroid1_vs_Paraxial_mesoderm,6,8
+Experiment 2,Argelaguet_2022,Pharyngeal_mesoderm_vs_Somitic_mesoderm,8,8
+Experiment 2,Argelaguet_2022,ExE_endoderm_vs_Spinal_cord,8,8
+Experiment 2,Argelaguet_2022,Def__endoderm_vs_Pharyngeal_mesoderm,8,8
+Experiment 2,Argelaguet_2022,Blood_progenitors_1_vs_Rostral_neurectoderm,8,6
+Experiment 2,Argelaguet_2022,Erythroid1_vs_Gut,6,8
+Experiment 2,Argelaguet_2022,Forebrain_Midbrain_Hindbrain_vs_Parietal_endoderm,8,7
+Experiment 2,Argelaguet_2022,Blood_progenitors_2_vs_Gut,8,8
+Experiment 2,Argelaguet_2022,Def__endoderm_vs_Erythroid3,8,4
+Experiment 2,Argelaguet_2022,Blood_progenitors_1_vs_Forebrain_Midbrain_Hindbrain,8,8
+Experiment 2,Argelaguet_2022,Endothelium_vs_Somitic_mesoderm,7,8
+Experiment 2,Argelaguet_2022,ExE_endoderm_vs_Gut,8,8
+Experiment 2,Argelaguet_2022,Def__endoderm_vs_Neural_crest,8,6
+Experiment 2,Argelaguet_2022,Gut_vs_Notochord,8,7
+Experiment 2,Argelaguet_2022,Erythroid2_vs_Erythroid3,6,4
+Experiment 2,Argelaguet_2022,Intermediate_mesoderm_vs_Visceral_endoderm,8,8
+Experiment 2,Argelaguet_2022,Notochord_vs_Surface_ectoderm,7,8
+Experiment 2,Argelaguet_2022,Erythroid2_vs_Somitic_mesoderm,6,8
+Experiment 2,Argelaguet_2022,Endothelium_vs_Erythroid2,7,6
+Experiment 2,Argelaguet_2022,Parietal_endoderm_vs_Visceral_endoderm,7,8
+Experiment 2,Argelaguet_2022,Caudal_Mesoderm_vs_Notochord,7,7
+Experiment 2,Argelaguet_2022,Allantois_vs_Cardiomyocytes,7,6
+Experiment 2,Argelaguet_2022,Blood_progenitors_1_vs_Notochord,8,7
+Experiment 2,Argelaguet_2022,NMP_vs_Parietal_endoderm,6,7
+Experiment 2,Argelaguet_2022,Erythroid3_vs_Rostral_neurectoderm,4,6
+Experiment 2,Argelaguet_2022,Allantois_vs_Forebrain_Midbrain_Hindbrain,7,8
+Experiment 2,Argelaguet_2022,Intermediate_mesoderm_vs_Surface_ectoderm,8,8
+Experiment 2,Argelaguet_2022,Blood_progenitors_2_vs_Neural_crest,8,6
+Experiment 2,Argelaguet_2022,Gut_vs_Paraxial_mesoderm,8,8
+Experiment 2,Argelaguet_2022,Haematoendothelial_progenitors_vs_Surface_ectoderm,8,8
+Experiment 2,Argelaguet_2022,Neural_crest_vs_Spinal_cord,6,8
+Experiment 2,Argelaguet_2022,Forebrain_Midbrain_Hindbrain_vs_Paraxial_mesoderm,8,8
+Experiment 2,Argelaguet_2022,Endothelium_vs_Gut,7,8
+Experiment 2,Argelaguet_2022,Rostral_neurectoderm_vs_Spinal_cord,6,8
+Experiment 2,Argelaguet_2022,Erythroid1_vs_Neural_crest,6,6
+Experiment 2,Argelaguet_2022,Erythroid2_vs_Intermediate_mesoderm,6,8
+Experiment 2,Argelaguet_2022,ExE_ectoderm_vs_NMP,6,6
+Experiment 2,Argelaguet_2022,Caudal_Mesoderm_vs_Intermediate_mesoderm,7,8
+Experiment 2,Argelaguet_2022,Cardiomyocytes_vs_Intermediate_mesoderm,6,8
+Experiment 2,Argelaguet_2022,Intermediate_mesoderm_vs_Somitic_mesoderm,8,8
+Experiment 2,Argelaguet_2022,Erythroid2_vs_Gut,6,8
+Experiment 2,Argelaguet_2022,Forebrain_Midbrain_Hindbrain_vs_Pharyngeal_mesoderm,8,8
+Experiment 2,Argelaguet_2022,Erythroid1_vs_Rostral_neurectoderm,6,6
+Experiment 2,Argelaguet_2022,Def__endoderm_vs_ExE_endoderm,8,8
+Experiment 2,Argelaguet_2022,ExE_ectoderm_vs_Surface_ectoderm,6,8
+Experiment 2,Argelaguet_2022,Cardiomyocytes_vs_Erythroid1,6,6
+Experiment 2,Argelaguet_2022,ExE_endoderm_vs_Haematoendothelial_progenitors,8,8
+Experiment 2,Argelaguet_2022,Allantois_vs_ExE_endoderm,7,8
+Experiment 2,Argelaguet_2022,Gut_vs_Pharyngeal_mesoderm,8,8
+Experiment 2,Argelaguet_2022,Endothelium_vs_Surface_ectoderm,7,8
+Experiment 2,Argelaguet_2022,Endothelium_vs_ExE_mesoderm,7,8
+Experiment 2,Argelaguet_2022,Blood_progenitors_2_vs_Erythroid1,8,6
+Experiment 2,Argelaguet_2022,Erythroid1_vs_Surface_ectoderm,6,8
+Experiment 2,Argelaguet_2022,Forebrain_Midbrain_Hindbrain_vs_Haematoendothelial_progenitors,8,8
+Experiment 2,Argelaguet_2022,Allantois_vs_Erythroid2,7,6
+Experiment 2,Argelaguet_2022,Blood_progenitors_2_vs_Rostral_neurectoderm,8,6
+Experiment 2,Argelaguet_2022,Gut_vs_Surface_ectoderm,8,8
+Experiment 2,Argelaguet_2022,ExE_mesoderm_vs_Somitic_mesoderm,8,8
+Experiment 2,Argelaguet_2022,Blood_progenitors_2_vs_Paraxial_mesoderm,8,8
+Experiment 2,Argelaguet_2022,Blood_progenitors_2_vs_Erythroid3,8,4
+Experiment 2,Argelaguet_2022,Gut_vs_Mesenchyme,8,8
+Experiment 2,Argelaguet_2022,Intermediate_mesoderm_vs_Spinal_cord,8,8
+Experiment 2,Argelaguet_2022,Gut_vs_Visceral_endoderm,8,8
+Experiment 2,Argelaguet_2022,ExE_endoderm_vs_Somitic_mesoderm,8,8
+Experiment 2,Argelaguet_2022,Mesenchyme_vs_Rostral_neurectoderm,8,6
+Experiment 2,Argelaguet_2022,Spinal_cord_vs_Visceral_endoderm,8,8
+Experiment 2,Argelaguet_2022,Caudal_Mesoderm_vs_ExE_endoderm,7,8
+Experiment 2,Argelaguet_2022,Def__endoderm_vs_ExE_ectoderm,8,6
+Experiment 2,Argelaguet_2022,Neural_crest_vs_Somitic_mesoderm,6,8
+Experiment 2,Argelaguet_2022,Cardiomyocytes_vs_ExE_mesoderm,6,8
+Experiment 2,Argelaguet_2022,Def__endoderm_vs_ExE_mesoderm,8,8
+Experiment 2,Argelaguet_2022,Erythroid3_vs_Spinal_cord,4,8
+Experiment 2,Argelaguet_2022,ExE_ectoderm_vs_Mesenchyme,6,8
+Experiment 2,Argelaguet_2022,Caudal_Mesoderm_vs_NMP,7,6
+Experiment 2,Argelaguet_2022,Erythroid3_vs_Intermediate_mesoderm,4,8
+Experiment 2,Argelaguet_2022,Blood_progenitors_2_vs_Def__endoderm,8,8
+Experiment 2,Argelaguet_2022,ExE_mesoderm_vs_Spinal_cord,8,8
+Experiment 2,Argelaguet_2022,Cardiomyocytes_vs_Mesenchyme,6,8
+Experiment 2,Argelaguet_2022,ExE_mesoderm_vs_Gut,8,8
+Experiment 2,Argelaguet_2022,Cardiomyocytes_vs_Visceral_endoderm,6,8
+Experiment 2,Argelaguet_2022,Caudal_Mesoderm_vs_Haematoendothelial_progenitors,7,8
+Experiment 2,Argelaguet_2022,Mesenchyme_vs_Neural_crest,8,6
+Experiment 2,Argelaguet_2022,Caudal_Mesoderm_vs_ExE_mesoderm,7,8
+Experiment 2,Argelaguet_2022,NMP_vs_Spinal_cord,6,8
+Experiment 2,Argelaguet_2022,Blood_progenitors_2_vs_Somitic_mesoderm,8,8
+Experiment 2,Argelaguet_2022,Gut_vs_Somitic_mesoderm,8,8
+Experiment 2,Argelaguet_2022,Blood_progenitors_1_vs_Cardiomyocytes,8,6
+Experiment 2,Argelaguet_2022,Erythroid3_vs_Neural_crest,4,6
+Experiment 2,Argelaguet_2022,Cardiomyocytes_vs_Erythroid2,6,6
+Experiment 2,Argelaguet_2022,Blood_progenitors_1_vs_Somitic_mesoderm,8,8
+Experiment 2,Argelaguet_2022,ExE_ectoderm_vs_Parietal_endoderm,6,7
+Experiment 2,Argelaguet_2022,Cardiomyocytes_vs_Somitic_mesoderm,6,8
+Experiment 2,Argelaguet_2022,ExE_endoderm_vs_Notochord,8,7
+Experiment 2,Argelaguet_2022,ExE_mesoderm_vs_Haematoendothelial_progenitors,8,8
+Experiment 2,Argelaguet_2022,Def__endoderm_vs_NMP,8,6
+Experiment 2,Argelaguet_2022,Blood_progenitors_2_vs_ExE_ectoderm,8,6
+Experiment 2,Argelaguet_2022,Def__endoderm_vs_Visceral_endoderm,8,8
+Experiment 2,Luecken_2021,CD16+ Mono_vs_HSC,13,13
+Experiment 2,Luecken_2021,Plasma cell_vs_Proerythroblast,8,13
+Experiment 2,Luecken_2021,CD4+ T activated_vs_Erythroblast,13,13
+Experiment 2,Luecken_2021,Erythroblast_vs_Transitional B,13,12
+Experiment 2,Luecken_2021,CD4+ T activated_vs_Normoblast,13,13
+Experiment 2,Luecken_2021,Erythroblast_vs_MK_E prog,13,12
+Experiment 2,Luecken_2021,CD8+ T naive_vs_Normoblast,4,13
+Experiment 2,Luecken_2021,Proerythroblast_vs_Transitional B,13,12
+Experiment 2,Luecken_2021,cDC2_vs_G_M prog,13,11
+Experiment 2,Luecken_2021,CD16+ Mono_vs_Erythroblast,13,13
+Experiment 2,Luecken_2021,CD14+ Mono_vs_CD4+ T naive,12,13
+Experiment 2,Luecken_2021,CD4+ T activated_vs_MK_E prog,13,12
+Experiment 2,Luecken_2021,CD8+ T_vs_HSC,13,13
+Experiment 2,Luecken_2021,CD4+ T naive_vs_Naive CD20+ B,13,13
+Experiment 2,Luecken_2021,G_M prog_vs_Transitional B,11,12
+Experiment 2,Luecken_2021,CD8+ T_vs_Proerythroblast,13,13
+Experiment 2,Luecken_2021,B1 B_vs_Proerythroblast,12,13
+Experiment 2,Luecken_2021,G_M prog_vs_HSC,11,13
+Experiment 2,Luecken_2021,CD8+ T naive_vs_G_M prog,4,11
+Experiment 2,Luecken_2021,CD8+ T_vs_Transitional B,13,12
+Experiment 2,Luecken_2021,cDC2_vs_ILC,13,6
+Experiment 2,Luecken_2021,CD14+ Mono_vs_Transitional B,12,12
+Experiment 2,Luecken_2021,NK_vs_pDC,13,13
+Experiment 2,Luecken_2021,CD14+ Mono_vs_cDC2,12,13
+Experiment 2,Luecken_2021,G_M prog_vs_Proerythroblast,11,13
+Experiment 2,Luecken_2021,CD8+ T_vs_Plasma cell,13,8
+Experiment 2,Luecken_2021,B1 B_vs_CD8+ T,12,13
+Experiment 2,Luecken_2021,G_M prog_vs_pDC,11,13
+Experiment 2,Luecken_2021,CD4+ T naive_vs_pDC,13,13
+Experiment 2,Luecken_2021,CD8+ T_vs_MK_E prog,13,12
+Experiment 2,Luecken_2021,B1 B_vs_CD4+ T activated,12,13
+Experiment 2,Luecken_2021,CD16+ Mono_vs_Plasma cell,13,8
+Experiment 2,Luecken_2021,CD16+ Mono_vs_CD4+ T activated,13,13
+Experiment 2,Luecken_2021,NK_vs_Transitional B,13,12
+Experiment 2,Luecken_2021,G_M prog_vs_MK_E prog,11,12
+Experiment 2,Luecken_2021,CD16+ Mono_vs_CD4+ T naive,13,13
+Experiment 2,Luecken_2021,Erythroblast_vs_ID2-hi myeloid prog,13,2
+Experiment 2,Luecken_2021,Erythroblast_vs_pDC,13,13
+Experiment 2,Luecken_2021,Lymph prog_vs_pDC,12,13
+Experiment 2,Luecken_2021,cDC2_vs_Normoblast,13,13
+Experiment 2,Luecken_2021,CD14+ Mono_vs_NK,12,13
+Experiment 2,Luecken_2021,CD4+ T activated_vs_ID2-hi myeloid prog,13,2
+Experiment 2,Luecken_2021,pDC_vs_Plasma cell,13,8
+Experiment 2,Luecken_2021,MK_E prog_vs_Normoblast,12,13
+Experiment 2,Luecken_2021,Lymph prog_vs_Transitional B,12,12
+Experiment 2,Luecken_2021,B1 B_vs_CD4+ T naive,12,13
+Experiment 2,Luecken_2021,ID2-hi myeloid prog_vs_Lymph prog,2,12
+Experiment 2,Luecken_2021,CD8+ T_vs_G_M prog,13,11
+Experiment 2,Luecken_2021,ID2-hi myeloid prog_vs_ILC,2,6
+Experiment 2,Luecken_2021,Naive CD20+ B_vs_Plasma cell,13,8
+Experiment 2,Luecken_2021,Naive CD20+ B_vs_pDC,13,13
+Experiment 2,Luecken_2021,B1 B_vs_CD8+ T naive,12,4
+Experiment 2,Luecken_2021,cDC2_vs_Naive CD20+ B,13,13
+Experiment 2,Luecken_2021,cDC2_vs_ID2-hi myeloid prog,13,2
+Experiment 2,Luecken_2021,CD8+ T naive_vs_ID2-hi myeloid prog,4,2
+Experiment 2,Luecken_2021,Lymph prog_vs_Plasma cell,12,8
+Experiment 2,Luecken_2021,CD8+ T naive_vs_Lymph prog,4,12
+Experiment 2,Luecken_2021,Erythroblast_vs_Normoblast,13,13
+Experiment 2,Luecken_2021,B1 B_vs_CD16+ Mono,12,13
+Experiment 2,Luecken_2021,CD8+ T_vs_ILC,13,6
+Experiment 2,Luecken_2021,cDC2_vs_Plasma cell,13,8
+Experiment 2,Luecken_2021,CD14+ Mono_vs_Proerythroblast,12,13
+Experiment 2,Luecken_2021,MK_E prog_vs_NK,12,13
+Experiment 2,Luecken_2021,CD14+ Mono_vs_Lymph prog,12,12
+Experiment 2,Luecken_2021,CD8+ T_vs_Lymph prog,13,12
+Experiment 2,Luecken_2021,ILC_vs_MK_E prog,6,12
+Experiment 2,Luecken_2021,CD4+ T activated_vs_NK,13,13
+Experiment 2,Luecken_2021,G_M prog_vs_Lymph prog,11,12
+Experiment 2,Luecken_2021,CD4+ T activated_vs_Plasma cell,13,8
+Experiment 2,Luecken_2021,B1 B_vs_G_M prog,12,11
+Experiment 2,Luecken_2021,CD14+ Mono_vs_Naive CD20+ B,12,13
+Experiment 2,Luecken_2021,B1 B_vs_NK,12,13
+Experiment 2,Luecken_2021,CD8+ T_vs_ID2-hi myeloid prog,13,2
+Experiment 2,Luecken_2021,CD4+ T activated_vs_ILC,13,6
+Experiment 2,Luecken_2021,HSC_vs_Proerythroblast,13,13
+Experiment 2,Luecken_2021,ID2-hi myeloid prog_vs_Proerythroblast,2,13
+Experiment 2,Luecken_2021,CD4+ T naive_vs_Erythroblast,13,13
+Experiment 2,Luecken_2021,Erythroblast_vs_Proerythroblast,13,13
+Experiment 2,Luecken_2021,CD8+ T naive_vs_Erythroblast,4,13
+Experiment 2,Luecken_2021,ILC_vs_Naive CD20+ B,6,13
+Experiment 2,Luecken_2021,Lymph prog_vs_Naive CD20+ B,12,13
+Experiment 2,Luecken_2021,Naive CD20+ B_vs_Transitional B,13,12
+Experiment 2,Luecken_2021,Lymph prog_vs_Proerythroblast,12,13
+Experiment 2,Luecken_2021,HSC_vs_Naive CD20+ B,13,13
+Experiment 2,Luecken_2021,CD16+ Mono_vs_pDC,13,13
+Experiment 2,Luecken_2021,NK_vs_Plasma cell,13,8
+Experiment 2,Luecken_2021,Lymph prog_vs_Normoblast,12,13
+Experiment 2,Luecken_2021,CD4+ T naive_vs_Normoblast,13,13
+Experiment 2,Luecken_2021,B1 B_vs_Lymph prog,12,12
+Experiment 2,Luecken_2021,CD16+ Mono_vs_Naive CD20+ B,13,13
+Experiment 2,Luecken_2021,CD4+ T naive_vs_G_M prog,13,11
+Experiment 2,Luecken_2021,CD14+ Mono_vs_ILC,12,6
+Experiment 2,Luecken_2021,CD16+ Mono_vs_Transitional B,13,12
+Experiment 2,Luecken_2021,CD14+ Mono_vs_G_M prog,12,11
+Experiment 2,Luecken_2021,CD4+ T naive_vs_cDC2,13,13
+Experiment 2,Luecken_2021,CD8+ T_vs_pDC,13,13
+Experiment 2,Luecken_2021,CD8+ T naive_vs_NK,4,13
+Experiment 2,Luecken_2021,CD4+ T naive_vs_ID2-hi myeloid prog,13,2
+Experiment 2,Luecken_2021,CD8+ T naive_vs_Transitional B,4,12
+Experiment 2,Luecken_2021,CD8+ T naive_vs_cDC2,4,13
+Experiment 2,Boukhaled_2022,CD4 Effector_vs_CD4 naive or mem,10,10
+Experiment 2,Boukhaled_2022,CD4 Effector_vs_CD4 TEMRA,10,10
+Experiment 2,Boukhaled_2022,CD4 Effector_vs_TREG,10,10
+Experiment 2,Boukhaled_2022,CD4 naive or mem_vs_CD4 TEMRA,10,10
+Experiment 2,Boukhaled_2022,CD4 naive or mem_vs_TREG,10,10
+Experiment 2,Boukhaled_2022,CD4 TEMRA_vs_TREG,10,10
+Experiment 2,SCI_dataset,Myelin_forming_oligodendrocytes_(MFOL)_vs_NK_T_cells,8,8
+Experiment 2,SCI_dataset,Dorsal_vs_Mature_oligodendrocytes_(MOL),8,8
+Experiment 2,SCI_dataset,Mature_oligodendrocytes_(MOL)_vs_NK_T_cells,8,8
+Experiment 2,SCI_dataset,Dorsal_vs_Vascular_endothelial_cells,8,8
+Experiment 2,SCI_dataset,Astrocytes_vs_B_cells,8,8
+Experiment 2,SCI_dataset,Astrocytes_vs_Vascular_endothelial_cells,8,8
+Experiment 2,SCI_dataset,Myeloid_dividing_vs_Newly_formed_oligodendrocytes_(NFOL),6,8
+Experiment 2,SCI_dataset,Astrocytes_vs_Microglia,8,8
+Experiment 2,SCI_dataset,Myelin_forming_oligodendrocytes_(MFOL)_vs_Oligodendrocytes_precursor_cells_(OPC),8,8
+Experiment 2,SCI_dataset,Vascular_cells_vs_Vascular_endothelial_cells,8,8
+Experiment 2,SCI_dataset,B_cells_vs_Ependymal_cells,8,8
+Experiment 2,SCI_dataset,Newly_formed_oligodendrocytes_(NFOL)_vs_Ventral,8,8
+Experiment 2,SCI_dataset,Ependymal_cells_vs_Myeloid_dividing,8,6
+Experiment 2,SCI_dataset,Ependymal_cells_vs_Myelin_forming_oligodendrocytes_(MFOL),8,8
+Experiment 2,SCI_dataset,NK_T_cells_vs_Peripheral_immune_cells,8,8
+Experiment 2,SCI_dataset,Mature_oligodendrocytes_(MOL)_vs_Peripheral_immune_cells,8,8
+Experiment 2,SCI_dataset,Vascular_cells_vs_Ventral,8,8
+Experiment 2,SCI_dataset,B_cells_vs_Vascular_cells,8,8
+Experiment 2,SCI_dataset,Microglia_vs_Newly_formed_oligodendrocytes_(NFOL),8,8
+Experiment 2,SCI_dataset,Dorsal_vs_Myeloid_dividing,8,6
+Experiment 2,SCI_dataset,Myeloid_dividing_vs_Peripheral_immune_cells,6,8
+Experiment 2,SCI_dataset,Astrocytes_vs_Ventral,8,8
+Experiment 2,SCI_dataset,Astrocytes_vs_Myelin_forming_oligodendrocytes_(MFOL),8,8
+Experiment 2,SCI_dataset,Ependymal_cells_vs_Peripheral_immune_cells,8,8
+Experiment 2,SCI_dataset,NK_T_cells_vs_Vascular_cells,8,8
+Experiment 2,SCI_dataset,Microglia_vs_Myeloid_dividing,8,6
+Experiment 2,SCI_dataset,Dorsal_vs_Vascular_cells,8,8
+Experiment 2,SCI_dataset,Dorsal_vs_Myelin_forming_oligodendrocytes_(MFOL),8,8
+Experiment 2,SCI_dataset,Dorsal_vs_NK_T_cells,8,8
+Experiment 2,SCI_dataset,Myeloid_dividing_vs_Vascular_endothelial_cells,6,8
+Experiment 2,SCI_dataset,Peripheral_immune_cells_vs_Ventral,8,8
+Experiment 2,SCI_dataset,Myelin_forming_oligodendrocytes_(MFOL)_vs_Vascular_endothelial_cells,8,8
+Experiment 2,SCI_dataset,B_cells_vs_Dorsal,8,8
+Experiment 2,SCI_dataset,Myelin_forming_oligodendrocytes_(MFOL)_vs_Ventral,8,8
+Experiment 2,SCI_dataset,NK_T_cells_vs_Oligodendrocytes_precursor_cells_(OPC),8,8
+Experiment 2,SCI_dataset,Mature_oligodendrocytes_(MOL)_vs_Ventral,8,8
+Experiment 2,SCI_dataset,Astrocytes_vs_Vascular_cells,8,8
+Experiment 2,SCI_dataset,B_cells_vs_Vascular_endothelial_cells,8,8
+Experiment 2,SCI_dataset,Ependymal_cells_vs_Microglia,8,8
+Experiment 2,SCI_dataset,Microglia_vs_Oligodendrocytes_precursor_cells_(OPC),8,8
+Experiment 2,SCI_dataset,Mature_oligodendrocytes_(MOL)_vs_Oligodendrocytes_precursor_cells_(OPC),8,8
+Experiment 2,SCI_dataset,B_cells_vs_Peripheral_immune_cells,8,8
+Experiment 2,SCI_dataset,Vascular_endothelial_cells_vs_Ventral,8,8
+Experiment 2,SCI_dataset,Newly_formed_oligodendrocytes_(NFOL)_vs_Vascular_cells,8,8
+Experiment 2,SCI_dataset,Dorsal_vs_Ependymal_cells,8,8
+Experiment 2,SCI_dataset,Newly_formed_oligodendrocytes_(NFOL)_vs_NK_T_cells,8,8
+Experiment 2,SCI_dataset,Myeloid_dividing_vs_Ventral,6,8
+Experiment 2,SCI_dataset,Newly_formed_oligodendrocytes_(NFOL)_vs_Peripheral_immune_cells,8,8
+Experiment 2,SCI_dataset,Astrocytes_vs_Dorsal,8,8
+Experiment 2,SCI_dataset,Oligodendrocytes_precursor_cells_(OPC)_vs_Ventral,8,8
+Experiment 2,SCI_dataset,Newly_formed_oligodendrocytes_(NFOL)_vs_Oligodendrocytes_precursor_cells_(OPC),8,8
+Experiment 2,SCI_dataset,B_cells_vs_Ventral,8,8
+Experiment 2,SCI_dataset,Astrocytes_vs_Oligodendrocytes_precursor_cells_(OPC),8,8
+Experiment 2,SCI_dataset,Microglia_vs_Myelin_forming_oligodendrocytes_(MFOL),8,8
+Experiment 2,SCI_dataset,Myeloid_dividing_vs_NK_T_cells,6,8
+Experiment 2,SCI_dataset,Mature_oligodendrocytes_(MOL)_vs_Myeloid_dividing,8,6
+Experiment 2,SCI_dataset,Ependymal_cells_vs_Vascular_endothelial_cells,8,8
+Experiment 2,SCI_dataset,Oligodendrocytes_precursor_cells_(OPC)_vs_Vascular_endothelial_cells,8,8
+Experiment 2,SCI_dataset,Dorsal_vs_Oligodendrocytes_precursor_cells_(OPC),8,8
+Experiment 2,SCI_dataset,Mature_oligodendrocytes_(MOL)_vs_Vascular_endothelial_cells,8,8
+Experiment 2,SCI_dataset,Ependymal_cells_vs_Oligodendrocytes_precursor_cells_(OPC),8,8
+Experiment 2,SCI_dataset,Mature_oligodendrocytes_(MOL)_vs_Myelin_forming_oligodendrocytes_(MFOL),8,8
+Experiment 2,SCI_dataset,Dorsal_vs_Newly_formed_oligodendrocytes_(NFOL),8,8
+Experiment 2,SCI_dataset,Mature_oligodendrocytes_(MOL)_vs_Microglia,8,8
+Experiment 2,SCI_dataset,Myeloid_dividing_vs_Vascular_cells,6,8
+Experiment 2,SCI_dataset,Microglia_vs_Vascular_endothelial_cells,8,8
+Experiment 2,SCI_dataset,Microglia_vs_Peripheral_immune_cells,8,8
+Experiment 2,SCI_dataset,Oligodendrocytes_precursor_cells_(OPC)_vs_Peripheral_immune_cells,8,8
+Experiment 2,SCI_dataset,B_cells_vs_Mature_oligodendrocytes_(MOL),8,8
+Experiment 2,SCI_dataset,Mature_oligodendrocytes_(MOL)_vs_Newly_formed_oligodendrocytes_(NFOL),8,8
+Experiment 2,SCI_dataset,Dorsal_vs_Microglia,8,8
+Experiment 2,SCI_dataset,B_cells_vs_Myeloid_dividing,8,6
+Experiment 2,SCI_dataset,Astrocytes_vs_Peripheral_immune_cells,8,8
+Experiment 2,SCI_dataset,Myelin_forming_oligodendrocytes_(MFOL)_vs_Newly_formed_oligodendrocytes_(NFOL),8,8
+Experiment 2,SCI_dataset,Astrocytes_vs_NK_T_cells,8,8
+Experiment 2,SCI_dataset,Myelin_forming_oligodendrocytes_(MFOL)_vs_Vascular_cells,8,8
+Experiment 2,SCI_dataset,Peripheral_immune_cells_vs_Vascular_cells,8,8
+Experiment 2,SCI_dataset,Ependymal_cells_vs_Newly_formed_oligodendrocytes_(NFOL),8,8
+Experiment 2,SCI_dataset,Microglia_vs_Vascular_cells,8,8
+Experiment 2,SCI_dataset,Mature_oligodendrocytes_(MOL)_vs_Vascular_cells,8,8
+Experiment 2,SCI_dataset,Peripheral_immune_cells_vs_Vascular_endothelial_cells,8,8
+Experiment 2,SCI_dataset,Dorsal_vs_Peripheral_immune_cells,8,8
+Experiment 2,SCI_dataset,Myeloid_dividing_vs_Oligodendrocytes_precursor_cells_(OPC),6,8
+Experiment 2,SCI_dataset,NK_T_cells_vs_Vascular_endothelial_cells,8,8
+Experiment 2,SCI_dataset,Astrocytes_vs_Newly_formed_oligodendrocytes_(NFOL),8,8
+Experiment 2,SCI_dataset,NK_T_cells_vs_Ventral,8,8
+Experiment 2,SCI_dataset,Astrocytes_vs_Ependymal_cells,8,8
+Experiment 2,SCI_dataset,Ependymal_cells_vs_Vascular_cells,8,8
+Experiment 2,SCI_dataset,Newly_formed_oligodendrocytes_(NFOL)_vs_Vascular_endothelial_cells,8,8
+Experiment 2,SCI_dataset,Microglia_vs_Ventral,8,8
+Experiment 2,SCI_dataset,B_cells_vs_Oligodendrocytes_precursor_cells_(OPC),8,8
+Experiment 2,SCI_dataset,Ependymal_cells_vs_NK_T_cells,8,8
+Experiment 2,SCI_dataset,B_cells_vs_Myelin_forming_oligodendrocytes_(MFOL),8,8
+Experiment 2,SCI_dataset,Ependymal_cells_vs_Mature_oligodendrocytes_(MOL),8,8
+Experiment 2,SCI_dataset,B_cells_vs_Microglia,8,8
+Experiment 2,SCI_dataset,B_cells_vs_Newly_formed_oligodendrocytes_(NFOL),8,8
+Experiment 2,SCI_dataset,Myelin_forming_oligodendrocytes_(MFOL)_vs_Peripheral_immune_cells,8,8
+Experiment 2,SCI_dataset,Astrocytes_vs_Myeloid_dividing,8,6
+Experiment 2,SCI_dataset,B_cells_vs_NK_T_cells,8,8
+Experiment 2,SCI_dataset,Oligodendrocytes_precursor_cells_(OPC)_vs_Vascular_cells,8,8
+Experiment 3,Published data,B1 B,6,6
+Experiment 3,Published data,CD14+ Mono,6,6
+Experiment 3,Published data,CD16+ Mono,6,7
+Experiment 3,Published data,CD4+ T activated,6,7
+Experiment 3,Published data,CD4+ T naive,6,7
+Experiment 3,Published data,CD8+ T,6,7
+Experiment 3,Published data,cDC2,6,7
+Experiment 3,Published data,Erythroblast,6,7
+Experiment 3,Published data,G_M prog,6,5
+Experiment 3,Published data,HSC,6,7
+Experiment 3,Published data,Lymph prog,6,6
+Experiment 3,Published data,MK_E prog,6,6
+Experiment 3,Published data,Naive CD20+ B,6,7
+Experiment 3,Published data,NK,6,7
+Experiment 3,Published data,Normoblast,6,7
+Experiment 3,Published data,pDC,6,7
+Experiment 3,Published data,Plasma cell,4,4
+Experiment 3,Published data,Proerythroblast,6,7
+Experiment 3,Published data,Transitional B,6,6
+Experiment 3,Downsampled data,,3,3
+Experiment 3,Simulations,,3,3

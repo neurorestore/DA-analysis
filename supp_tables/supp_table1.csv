@@ -1,0 +1,42 @@
+Figure,Feature,Binarization,Normalization
+"2b, 5a, 7a, 8a, 8b, 8e, 8f, S1a, S1b, S1c, S1e, S1f, S9a, S9b, S27a, S28a, S28b, E1a, E1b, E1c, E4a, E4b, E4c",Peaks called in matched bulk ATAC-seq data,"Only when required by DA method (e.g., binomial test)","Wilcox, LRclusters, t-test: log-TP10K
+DESeq2, edgeR, NB, SnapATAC: none (model counts directly)
+Permutation, binomial, LRpeaks, Fisher’s exact test: none (require binarization)"
+"2c, 5b, 7b, 8c, 8d, 8e, 8f, S2a, S2b, S2c, S2d, S2e, S10a, S10b, S27b, S28c, S28d, E2a, E2b, E2c",TSSwindows called with 10000 bp from transcription start sites,"Only when required by DA method (e.g., binomial test)","Wilcox, LRclusters, t-test: log-TP10K
+DESeq2, edgeR, NB, SnapATAC: none (model counts directly)
+Permutation, binomial, LRpeaks, Fisher’s exact test: none (require binarization)"
+"2d, S3a, S3b, S3c, S3d, S3e",Gene set values were obtained from the TSSwindows-associated genes,"Only when required by DA method (e.g., binomial test)","Wilcox, LRclusters, t-test: log-TP10K
+DESeq2, edgeR, NB, SnapATAC: none (model counts directly)
+Permutation, binomial, LRpeaks, Fisher’s exact test: none (require binarization)"
+"3b, 4a, 4b, 4c, 5c, S5a, S5b, S5c, S6a, S6b, S6c, S6d, S6e, S6f, S11a, S11b, E3a, E3b, E3c",Peaks called in snATAC-seq data,"Only when required by DA method (e.g., binomial test)","Wilcox, LRclusters, t-test: log-TP10K
+DESeq2, edgeR, NB, SnapATAC: none (model counts directly)
+Permutation, binomial, LRpeaks, Fisher’s exact test: none (require binarization)"
+"3c, S7a, S7b, S7c, S7d, S7e, S7f",Peaks called in downsamped (“snATAC-seq”) data,"Only when required by DA method (e.g., binomial test)","Wilcox, LRclusters, t-test: log-TP10K
+DESeq2, edgeR, NB, SnapATAC: none (model counts directly)
+Permutation, binomial, LRpeaks, Fisher’s exact test: none (require binarization)"
+"3d, 3e, S4a, S4b, S4c, S4d, S4e, S8a, S8b, S8c, S8d",Counts were simulated from the parameters estimated from peaks defined in (atlas) dataset ,"Only when required by DA method (e.g., binomial test)","Wilcox, LRclusters, t-test: log-TP10K
+DESeq2, edgeR, NB, SnapATAC: none (model counts directly)
+Permutation, binomial, LRpeaks, Fisher’s exact test: none (require binarization)"
+"6a, S12a, S12b, S12c, S12d",Peaks called in matched bulk ATAC-seq data,"Binarized vs non-binarized in the following methods: DESeq2, edgeR, LRclusters, SnapATAC, Wilcox, t-test, Negative binomial","Wilcox, LRclusters, t-test: log-TP10K
+DESeq2, edgeR, NB, SnapATAC: none (model counts directly)"
+"6b, 6e, 6f, 6g, S13a, S13b, S13c, S14a, S14b, S14c, S14d, S14e, S14f",Peaks called in snATAC-seq data,"Binarized vs non-binarized in the following methods: DESeq2, edgeR, LRclusters, SnapATAC, Wilcox, t-test, Negative binomial","Wilcox, LRclusters, t-test: log-TP10K
+DESeq2, edgeR, NB, SnapATAC: none (model counts directly)"
+"6c, S15a, S15b, S15c, S15d, S15e, S15f",Peaks called in downsamped (“snATAC-seq”) data,"Binarized vs non-binarized in the following methods: DESeq2, edgeR, LRclusters, SnapATAC, Wilcox, t-test, Negative binomial","Wilcox, LRclusters, t-test: log-TP10K
+DESeq2, edgeR, NB, SnapATAC: none (model counts directly)"
+"6d, S16a, S16b, S16c, S16d",Counts were simulated from the parameters estimated from peaks defined in (atlas) dataset ,"Binarized vs non-binarized in the following methods: DESeq2, edgeR, LRclusters, SnapATAC, Wilcox, t-test, Negative binomial","Wilcox, LRclusters, t-test: log-TP10K
+DESeq2, edgeR, NB, SnapATAC: none (model counts directly)"
+"6h, 6l, 6m, 6n, S17a, S17b, S17c, S17d",Peaks called in matched bulk ATAC-seq data,No binarization,"Wilcox, LRclusters, t-test: 
+log-TP10K, TP10k, none, TF-IDF, log-TP(median), smoothGC"
+"6i, S18a, S18b, S18c, S19a, S19b, S20a, S20b,S21a, S21b",Peaks called in snATAC-seq data,No binarization,"Wilcox, LRclusters, t-test: 
+log-TP10K, TP10k, none, TF-IDF, log-TP(median), smoothGC"
+"6j, S22a, S22b,S23a, S23b, S24a, S24b",Peaks called in downsamped (“snATAC-seq”) data,No binarization,"Wilcox, LRclusters, t-test: 
+log-TP10K, TP10k, none, TF-IDF, log-TP(median), smoothGC"
+"6k, S25a, S25b,S26a, S26b",Counts were simulated from the parameters estimated from peaks defined in (atlas) dataset ,No binarization,"Wilcox, LRclusters, t-test: 
+log-TP10K, TP10k, none, TF-IDF, log-TP(median), smoothGC"
+"6o, 6p, 6q","Peaks called in matched bulk ATAC-seq data
+background matching is defined using peaks defined in the same way","Only when required by DA method (e.g., binomial test)","Wilcox, LRclusters, t-test: log-TP10K
+DESeq2, edgeR, NB, SnapATAC: none (model counts directly)
+Permutation, binomial, LRpeaks, Fisher’s exact test: none (require binarization)"
+S1d,Peaks called in pseudobulk snATAC-seq data,"Only when required by DA method (e.g., binomial test)","Wilcox, LRclusters, t-test: log-TP10K
+DESeq2, edgeR, NB, SnapATAC: none (model counts directly)
+Permutation, binomial, LRpeaks, Fisher’s exact test: none (require binarization)"

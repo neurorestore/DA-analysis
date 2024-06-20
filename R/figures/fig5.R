@@ -109,8 +109,8 @@ p1 = eff %>%
                label.padding = unit(0.6, 'lines')) +
     # scale_color_manual('', values = pal) +
     # scale_fill_manual('', values = pal) +
-    scale_x_discrete('# of cells') +
-    scale_y_continuous('Cohen\'s d (vs. no filter)', limits = c(-0.65, 0.65)) +
+    scale_x_discrete('% of peaks removed') +
+    scale_y_continuous('Cohen\'s d (vs. random peak removal)', limits = c(-0.65, 0.65)) +
     ggtitle('Effect of log-fold change filtering on concordance\nbetween scATAC-seq and matched bulk ATAC-seq') +
     boxed_theme(size_sm = 5, size_lg = 6) +
     theme(axis.text.x = element_text(angle = 45, hjust = 1),
@@ -230,8 +230,8 @@ p2 = eff %>%
     geom_label(data = labs, aes(y = Inf, label = label), size = 1.5, hjust = 0.5,
                vjust = 1, color = 'black', fill = NA, label.size = NA,
                label.padding = unit(0.6, 'lines')) +
-    scale_x_discrete('# of cells') +
-    scale_y_continuous('Cohen\'s d (vs. no filter)', limits=c(-0.8, 0.05)) +
+    scale_x_discrete('% of genes removed') +
+    scale_y_continuous('Cohen\'s d (vs. random gene removal)', limits=c(-0.8, 0.05)) +
     ggtitle('Effect of log-fold change filtering on concordance\nbetween ATAC and RNA modalities of multiome data') +
     boxed_theme(size_sm = 5, size_lg = 6) +
     theme(axis.text.x = element_text(angle = 45, hjust = 1),
@@ -337,8 +337,8 @@ p3 = eff %>%
                label.padding = unit(0.6, 'lines')) +
     # scale_color_manual('', values = pal) +
     # scale_fill_manual('', values = pal) +
-    scale_x_discrete('# of cells') +
-    scale_y_continuous('Cohen\'s d (vs. no filter)') +
+    scale_x_discrete('% of peaks removed') +
+    scale_y_continuous('Cohen\'s d (vs. random peak removal)') +
     ggtitle('Effect of log-fold change filtering on false discoveries\nin null comparisons of real scATAC-seq data') +
     coord_cartesian(ylim = c(0, 1.3)) +
     boxed_theme(size_sm = 5, size_lg = 6) +

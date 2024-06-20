@@ -102,6 +102,7 @@ grey_pal = colorRampPalette(c('grey10', 'grey85'))(6) %>%
     setNames(c('none', 'TP(median)', 'TP(10K)', 'logTP(median)', 'TF-IDF', 'smooth GC-full quantile'))
 
 curr_out_plots = list()
+full_labs = data.frame()
 for (method in methods) {
     avg2 = avg1 %>% 
         filter(method == !!method)
@@ -110,6 +111,8 @@ for (method in methods) {
         summarise(mean = mean(aucc), n = n(), median = median(aucc), aucc = median) %>%
         ungroup() %>%
         mutate(label = formatC(median, format = 'f', digits = 2))
+    full_labs %<>% rbind(labs)
+    
     pal = c('', grey_pal)
     pal[1] = da_analysis_colors[method]
     pal_names = c('logTP(10K)', names(grey_pal))
@@ -137,6 +140,8 @@ for (method in methods) {
     out_plots[[length(out_plots)+1]] = p1_1
     curr_out_plots[[length(curr_out_plots)+1]] = p1_1
 }
+
+saveRDS(full_labs, 'data/summaries/meta_summaries/bulk_aucc_normalized_summary.rds')
 
 p1 = wrap_plots(curr_out_plots, nrow=1)
 ggsave("fig/Supp_Fig17/bulk-aucc-normalization.pdf", p1,
@@ -187,6 +192,7 @@ dat %<>%
                                       'TP(median)' = 'tp_median',
                                       'TP(10K)' = 'tp10k'))
 curr_out_plots = list()
+full_labs = data.frame()
 for (method in methods) {
     dat1 = dat %>% 
         filter(method == !!method)
@@ -198,6 +204,7 @@ for (method in methods) {
                   number_of_da_regions = median) %>%
         ungroup() %>%
         mutate(label = round(median))
+    full_labs %<>% rbind(labs)
     pal = c('', grey_pal)
     pal[1] = da_analysis_colors[method]
     pal_names = c('logTP(10K)', names(grey_pal))
@@ -229,6 +236,8 @@ for (method in methods) {
     out_plots[[length(out_plots)+1]] = p2_1
     curr_out_plots[[length(curr_out_plots)+1]] = p2_1
 }
+
+saveRDS(full_labs, 'data/summaries/meta_summaries/luecken_false_discoveries_normalized_summary.rds')
 
 p2 = wrap_plots(curr_out_plots, nrow=1)
 ggsave("fig/Supp_Fig17/luecken-false-discoveries-normalization.pdf", p2,
@@ -287,6 +296,7 @@ dat %<>%
                                       'TP(10K)' = 'tp10k'))
 
 curr_out_plots = list()
+full_labs = data.frame()
 for (method in methods) {
     dat1 = dat %>% 
         filter(method == !!method)
@@ -298,6 +308,7 @@ for (method in methods) {
                   number_of_da_regions = median) %>%
         ungroup() %>%
         mutate(label = round(median))
+    full_labs %<>% rbind(labs)
     pal = c('', grey_pal)
     pal[1] = da_analysis_colors[method]
     pal_names = c('logTP(10K)', names(grey_pal))
@@ -329,6 +340,8 @@ for (method in methods) {
     out_plots[[length(out_plots)+1]] = p3_1
     curr_out_plots[[length(curr_out_plots)+1]] = p3_1
 }
+
+saveRDS(full_labs, 'data/summaries/meta_summaries/snapatac_false_discoveries_normalized_summary.rds')
 
 p3 = wrap_plots(curr_out_plots, nrow=1)
 ggsave("fig/Supp_Fig17/snapatac-false-discoveries-normalization.pdf", p3,
@@ -388,6 +401,7 @@ dat %<>%
                                       'TP(median)' = 'tp_median',
                                       'TP(10K)' = 'tp10k'))
 curr_out_plots = list()
+full_labs = data.frame()
 for (method in methods) {
     dat1 = dat %>% 
         filter(method == !!method)
@@ -399,6 +413,7 @@ for (method in methods) {
                   number_of_da_regions = median) %>%
         ungroup() %>%
         mutate(label = round(median))
+    full_labs %<>% rbind(labs)
     pal = c('', grey_pal)
     pal[1] = da_analysis_colors[method]
     pal_names = c('logTP(10K)', names(grey_pal))
@@ -430,6 +445,7 @@ for (method in methods) {
     out_plots[[length(out_plots)+1]] = p4_1
     curr_out_plots[[length(curr_out_plots)+1]] = p4_1
 }
+saveRDS(full_labs, 'data/summaries/meta_summaries/splatter_false_discoveries_normalized_summary.rds')
 p4 = wrap_plots(curr_out_plots, nrow=1)
 ggsave("fig/Supp_Fig17/splatter-false-discoveries-normalization.pdf", p4,
        width = 18, height = 6.5, units = "cm", useDingbats = FALSE)

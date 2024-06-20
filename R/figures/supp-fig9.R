@@ -98,7 +98,7 @@ p1 = avg1 %>%
     #           color = 'black') +
     scale_color_manual('Filter by:', values = pal) +
     scale_fill_manual('Filter by:', values = pal) +
-    scale_x_reordered() +
+    scale_x_reordered('% of peaks removed') +
     scale_y_continuous('AUCC') +
     boxed_theme(size_sm = 5, size_lg = 6) +
     theme(legend.position = 'top',
@@ -133,7 +133,7 @@ p2 = enr %>%
     #           color = 'black') +
     scale_color_manual('', values = pal) +
     scale_fill_manual('', values = pal) +
-    scale_x_reordered() +
+    scale_x_reordered('% of peaks removed') +
     scale_y_continuous(expression(Delta~AUCC)) +
     boxed_theme(size_sm = 5, size_lg = 6) +
     theme(legend.position = 'none',

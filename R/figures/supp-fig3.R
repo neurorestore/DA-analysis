@@ -82,6 +82,8 @@ labs = avg0 %>%
     summarise(mean = mean(aucc), n = n(), median = median(aucc), aucc = median) %>%
     ungroup() %>%
     mutate(label = formatC(median, format = 'f', digits = 2))
+saveRDS(labs, 'data/summaries/meta_summaries/multiome_gsea_aucc-bidirectional_promoter-summary.rds')
+
 pal = da_analysis_colors
 p1 = avg0 %>%
     mutate(title = 'Removal of overlapping\npromoter regions') %>%
@@ -179,9 +181,11 @@ avg %<>%
     filter(!filter %in% c('10%', '20%'))
 
 grid = distinct(dat, scrna_da_family, scrna_da_method, scrna_da_type)
-plots = pmap(grid, function(...) {
-    current = tibble(...)
-    
+full_labs = data.frame()
+plots = list()
+
+for (i in 1:nrow(grid)) {
+    current = grid[i,]
     # average over bulk methods
     avg = dat %>% 
         anti_join(current) %>% 
@@ -239,6 +243,10 @@ plots = pmap(grid, function(...) {
         summarise(mean = mean(aucc), n = n(), median = median(aucc), aucc = median) %>%
         ungroup() %>%
         mutate(label = formatC(median, format = 'f', digits = 2))
+    full_labs %<>%
+        rbind(labs %>% tidyr::crossing(current[2:3]))
+    
+    
     pal = da_analysis_colors
     p = avg0 %>%
         mutate(title = held_out) %>% 
@@ -262,11 +270,12 @@ plots = pmap(grid, function(...) {
               plot.title = element_text(size = 6),
               aspect.ratio = 1.4,
               legend.position = 'none')
-    p
-})
-
+    plots[[length(plots)+1]] = p
+}
 # plot
 p2 = wrap_plots(plots, nrow = 2, ncol=3)
+saveRDS(full_labs, 'data/summaries/meta_summaries/multiome_gsea_aucc-leave_bulk_out-summary.rds')
+p2
 ggsave("fig/Supp_Fig3/multiome-gsea-aucc-leave-bulk-out.pdf", p2, width = 13.85, height = 15, units = "cm", useDingbats = FALSE)
 
 # correlation matrix
@@ -373,12 +382,81 @@ p3
 ggsave("fig/Supp_Fig3/multiome-gsea-aucc-leave-bulk-out-correlation.pdf",
        p3, width = 5, height = 5, units = "cm", useDingbats = FALSE)
 
+# load data
+dat = readRDS("data/summaries/concordance_res/multiome/all_aucc_gsea.rds") %>% 
+    type_convert() %>% 
+    filter(paper != 'Flochlay_2022')
+# no percentiles
+# no binarization or normalization
+table(dat$scatac_binarization, dat$scatac_normalization)
+
+# filter Zhu, Anandon, atlas by label
+dat %<>%
+    filter(
+        !grepl('Zhu', paper),
+        !grepl('Anadon', paper),
+        !(paper == 'Squair_2022' & grepl('7d_vs_Uninjured', cell_type)),
+        !(paper == 'Squair_2022' & grepl('2m_vs_Uninjured', cell_type)),
+    )
+# remove mixed models and pseudoreplicates
+dat %<>% filter(!scatac_pseudo_repl, scatac_da_family != 'mixedmodel')
+
+# average over bulk methods
+avg = dat %>% 
+    group_by_at(vars(-scrna_da_family, -scrna_da_method, -scrna_da_type,
+                     -bulk_features, -overlap, -aucc)) %>% 
+    summarise(aucc = mean(aucc),
+              n = n()) %>% 
+    ungroup()
+
+# re-code x-values and colors
+avg %<>%
+    mutate(method = paste0(scatac_da_method, '-', scatac_da_type) %>% 
+               gsub("-singlecell|-binomial|-exact", "", .),
+           method = ifelse(scatac_pseudo_repl,
+                           paste(method, '(pseudo-replicates)'), method),
+           method = gsub("snapatac", "SnapATAC::findDAR", method) %>% 
+               gsub("fisher", "FET", .) %>% 
+               gsub("-LR_.*|-perm.*$", "", .) %>% 
+               gsub("LR_", "LR", .),
+           color = ifelse(scatac_pseudo_repl, 'pseudo-replicates', scatac_da_family),
+           color = ifelse(method %in% c('binomial', 'FET', 'LRpeaks', 'permutation'),
+                          'singlecell', color) %>% 
+               fct_recode('single-cell' = 'singlecell',
+                          'other' = 'non_libra') %>% 
+               fct_relevel('single-cell', 'pseudobulk', 'other'),
+           method = fct_recode(method,
+                               "'SnapATAC::findDAR'" = 'SnapATAC::findDAR',
+                               'Permutation~test' = 'permutation',
+                               't~test' = 't',
+                               'LR[peaks]' = 'LRpeaks',
+                               'LR[clusters]' = 'LR',
+                               'Binomial' = 'binomial',
+                               'Wilcoxon~rank-sum~test' = 'wilcox',
+                               'Fisher~exact~test' = 'FET',
+                               'Negative~binomial' = 'negbinom') %>% 
+               as.character()) %>% 
+    # drop limma
+    filter(!grepl('limma', method))
+
+# re-code filtering
+avg %<>%
+    mutate(filter = ifelse(scatac_percent_filter, 
+                           paste0(scatac_min_cell_filter, '%'),
+                           paste0(scatac_min_cell_filter, ' cells')) %>% 
+               fct_recode('1 cell' = '1 cells') %>% 
+               fct_relevel('1 cell', '10 cells', '0.2%', '0.5%', '1%', '5%', 
+                           '10%', '20%')) %>% 
+    filter(!filter %in% c('10%', '20%'))
+
 avg0 = filter(avg, k == 50, scatac_min_cell_filter == 1, !scatac_percent_filter)
 labs = avg0 %>% 
     group_by(method, color) %>%
     summarise(mean = mean(aucc), n = n(), median = median(aucc), aucc = median) %>%
     ungroup() %>%
     mutate(label = formatC(median, format = 'f', digits = 2))
+saveRDS(labs, 'data/summaries/meta_summaries/multiome_gsea_aucc-k=50-summary.rds')
+
 pal = da_analysis_colors
 p4 = avg0 %>%
     mutate(title = paste('k = 50')) %>% 
@@ -412,6 +490,8 @@ labs = avg0 %>%
     summarise(mean = mean(aucc), n = n(), median = median(aucc), aucc = median) %>%
     ungroup() %>%
     mutate(label = formatC(median, format = 'f', digits = 2))
+saveRDS(labs, 'data/summaries/meta_summaries/multiome_gsea_aucc-k=500-summary.rds')
+
 pal = da_analysis_colors
 p5 = avg0 %>%
     mutate(title = paste('k = 500')) %>% 
@@ -445,6 +525,8 @@ labs = avg0 %>%
     summarise(mean = mean(aucc), n = n(), median = median(aucc), aucc = median) %>%
     ungroup() %>%
     mutate(label = formatC(median, format = 'f', digits = 2))
+saveRDS(labs, 'data/summaries/meta_summaries/multiome_gsea_aucc-filter=1-summary.rds')
+
 p6 = avg0 %>%
     mutate(title = paste('1% cell filter')) %>% 
     ggplot(aes(x = reorder(method, aucc, stats::median), 
@@ -551,6 +633,8 @@ labs = avg0 %>%
     summarise(mean = mean(aucc), n = n(), median = median(aucc), aucc = median) %>%
     ungroup() %>%
     mutate(label = formatC(median, format = 'f', digits = 2))
+saveRDS(labs, 'data/summaries/meta_summaries/multiome_gsea_aucc-scrna_terciles-summary.rds')
+
 lvls = labs %>% 
     filter(expr == 'all') %>% 
     arrange(median) %>% 
